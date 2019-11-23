@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="InicioForm" type="mypackage3.InicioForm"/>
+    <form-bean name="MenuForm" type="mypackage3.MenuForm"/>
+    <form-bean name="AltaForm" type="mypackage3.AltaForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="menu" path="/menu.jsp"/>
+    <forward name="inicio_falla" path="/inicioFalla.jsp"/>
+    <forward name="error_db" path="/error_db.jsp"/>
+    <forward name="alta" path="/alta.jsp"/>
+    <forward name="modificacion" path="/modificacion.jsp"/>
+    <forward name="baja" path="/baja.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/ingresar" type="mypackage3.InicioAction" name="InicioForm" input="/inicio.jsp" scope="request"/>
+    <action path="/menu" type="mypackage3.MenuAction" name="MenuForm" input="/menu.jsp" scope="request"/>
+    <action path="/alta" type="mypackage3.AltaAction" name="AltaForm" input="/alta.jsp" scope="request"/>
+  </action-mappings>
+  <message-resources parameter="mypackage3.ApplicationResources"/>
+</struts-config>
